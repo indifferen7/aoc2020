@@ -2,7 +2,7 @@
   (:require [aoc2020.utils :as utils]
             [clojure.set]))
 
-(def input (->> "day6" (utils/lines-from)))
+(def input (-> "day6" (utils/lines-from)))
 
 (def group-answers
   (loop [[line & rest] input
@@ -16,10 +16,10 @@
 
 (println "Solution first part: "
          (->>
-              (map flatten group-answers)
-              (map set)
-              (map count)
-              (apply +)))
+           (map flatten group-answers)
+           (map set)
+           (map count)
+           (apply +)))
 
 (println "Solution second part: "
          (->>
