@@ -26,7 +26,7 @@
 
 (println "Solution first part: " (:acc (traverse input)))
 
-(def nop-and-jmp (filter (fn [[_ [op _]]] (contains? #{"jmp" "nop"} op)) input))
+(def nop-and-jmp (filter (comp #{"jmp" "nop"} first last) input))
 
 (def part-two
   (loop [[[idx [op _]] & rest] nop-and-jmp]
